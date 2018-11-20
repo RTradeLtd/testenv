@@ -24,8 +24,6 @@ testenv:
 	@sleep $(WAIT)
 	@echo "Containers online:"
 	@docker ps
-	@echo "Running migrations..."
-	@env CONFIG_DAG=./test/config.json go run cmd/temporal/main.go migrate-insecure
 	@echo "===================          done           ==================="
 
 # Shut down testenv
