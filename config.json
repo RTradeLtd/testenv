@@ -10,8 +10,8 @@
 		"admin_user": "",
 		"connection": {
 			"certificates": {
-				"cert_path": "./test/api.cert",
-				"key_path": "./test/api.key"
+				"cert_path": "./testenv/certs/api.cert",
+				"key_path": "./testenv/certs/api.key"
 			},
 			"listen_address": "127.0.0.1"
 		},
