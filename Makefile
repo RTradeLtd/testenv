@@ -32,3 +32,14 @@ stop-testenv:
 	@echo "===================  shutting down test env ==================="
 	@$(DOCKERCOMPOSE_TEST) down
 	@echo "===================          done           ==================="
+
+# Remove assets
+.PHONY: clean
+clean: stop-testenv
+	@echo "=================== cleaning up temp assets ==================="
+	@echo "Removing Docker assets..."
+	@$(DOCKERCOMPOSE_TEST) rm -f -v
+	@echo "Cleaning network interfaces..."
+	@sudo ip addr del $(ADDR_NODE1) dev $(INTERFACE)
+	@sudo ip addr del $(ADDR_NODE2) dev $(INTERFACE)
+	@echo "===================          done           ==================="
