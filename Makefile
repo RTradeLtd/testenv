@@ -4,9 +4,12 @@ INTERFACE=eth0
 ADDR_NODE1=192.168.1.101
 ADDR_NODE2=192.168.2.101
 DOCKERCOMPOSE_TEST=env ADDR_NODE1=$(ADDR_NODE1) ADDR_NODE2=$(ADDR_NODE2) docker-compose
+LSBDESC=lsb_release -d | awk '{print $2}'
 
 ifeq ($(UNAME), Darwin)
 INTERFACE=en0
+else ifeq ($(LSBDEC), Pop!_OS)
+INTERFACE=enp3s0f1
 endif
 
 # Set up test environment
