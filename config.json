@@ -102,5 +102,6 @@
 			"log_file": "./templogs.log",
 			"keystore_password": "password123"
 		}
-	}
+	},
+	"log_dir": "./tmp"
 }
