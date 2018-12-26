@@ -20,8 +20,9 @@
 			"port": "6768"
 		},
 		"sessions": {
-			"auth_key": "",
-			"encryption_key": ""
+			"auth_key": "myAuthKey",
+			"encryption_key": "myEncKey",
+			"csrf_secret": "myCSRFSecret"
 		},
 		"rollbar_token": "",
 		"jwt_key": "",
