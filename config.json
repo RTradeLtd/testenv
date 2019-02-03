@@ -1,11 +1,4 @@
 {
-	"database": {
-		"name": "temporal",
-		"url": "127.0.0.1",
-		"port": "5433",
-		"username": "postgres",
-		"password": "password123"
-	},
 	"api": {
 		"admin_user": "",
 		"connection": {
@@ -24,18 +17,61 @@
 			"key": "suchStrongKeyMuchProtectVerySafe"
 		},
 		"size_limit_in_giga_bytes": "2"
+	},	
+	"api_keys": {
+		"chain_rider": ""
 	},
-	"ipfs": {
-		"api_connection": {
-			"host": "192.168.1.101",
-			"port": "5001"
+	"aws": {
+		"key_id": "",
+		"secret": ""
+	},
+	"database": {
+		"name": "temporal",
+		"url": "127.0.0.1",
+		"port": "5433",
+		"username": "postgres",
+		"password": "password123"
+	},
+	"services": {
+		"lens": {
+			"url": "",
+			"tls": {
+				"cert_path": "",
+				"key_file": ""
+			},
+			"auth_key": ""
 		},
-		"keystore_path": "/tmp"
-	},
-	"ipfs_cluster": {
-		"api_connection": {
-			"host": "192.168.1.101",
-			"Port": "9094"
+		"nexus": {
+			"host": "",
+			"port": "",
+			"key": "",
+			"tls": {
+				"cert": "",
+				"key": ""
+			},
+			"delegator": {
+				"port": ""
+			}
+		},
+		"pay": {
+			"address": "",
+			"port": "",
+			"protocol": "",
+			"tls": {
+				"cert": "",
+				"key": ""
+			},
+			"auth_key": ""
+		},
+		"krab": {
+			"url": "127.0.0.1:10000",
+			"tls": {
+				"cert_path": "",
+				"key_file": ""
+			},
+			"auth_key": "password123",
+			"log_file": "./templogs.log",
+			"keystore_password": "password123"
 		}
 	},
 	"ethereum": { 
@@ -60,44 +96,43 @@
 			"payment_contract_address": ""
 		}
 	},
-	"rabbitmq": {
-		"url": "amqp://guest:guest@localhost:5672/"
-	},
-	"aws": {
-		"key_id": "",
-		"secret": ""
-	},
-	"minio": {
-		"access_key": "C03T49S17RP0APEZDK6M",
-		"secret_key": "q4I9t2MN/6bAgLkbF6uyS7jtQrXuNARcyrm2vvNA",
-		"connection": {
-			"ip": "127.0.0.1",
-			"port": "9000"
+	"ipfs_cluster": {
+		"api_connection": {
+			"host": "192.168.1.101",
+			"Port": "9094"
 		}
 	},
-	"sendgrid":  {
+	"ipfs": {
+		"api_connection": {
+			"host": "192.168.1.101",
+			"port": "5001"
+		},
+		"keystore_path": "/tmp"
+	},
+	"rabbitmq": {
+		"url": "amqp://guest:guest@localhost:5672/",
+		"tls_config": {
+			"cert_file": "",
+			"key_file": "",
+			"ca_cert_file": ""
+		}
+	},
+	"sendgrid": {
 		"api_key": "",
 		"email_address": "",
 		"email_name": ""
 	},
-	"api_keys": {
-		"chain_rider": ""
+	"stripe": {
+		"publishable_key": "",
+		"secret_key": ""
 	},
 	"wallets": {
-		"dash": "yfLFuyfSNHNtwKbfaGXh17maGKAAgd2A4z"
-	},
-	"endpoints": {
-		"krab": {
-			"url": "127.0.0.1:10000",
-			"tls": {
-				"cert_path": "",
-				"key_file": ""
-			},
-			"auth_key": "password123",
-			"log_file": "./templogs.log",
-			"keystore_password": "password123"
-		}
+		"eth": "",
+		"rtc": "",
+		"xmr": "",
+		"dash": "yfLFuyfSNHNtwKbfaGXh17maGKAAgd2A4z",
+		"btc": "",
+		"ltc": ""
 	},
 	"log_dir": "./tmp"
 }
- 
