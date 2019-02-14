@@ -71,7 +71,17 @@
 			},
 			"auth_key": "password123",
 			"log_file": "./templogs.log",
-			"keystore_password": "password123"
+			"keystore_password": "password123",
+			"fallback": {
+				"url": "127.0.0.1:10000",
+				"TLS": {
+						"cert_path": "",
+						"key_file": ""
+				},
+				"auth_key": "password123",
+				"log_file": "./templogs.log",
+				"keystore_password": "password123"
+			}
 		}
 	},
 	"ethereum": { 
