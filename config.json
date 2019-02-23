@@ -34,12 +34,12 @@
 	},
 	"services": {
 		"lens": {
-			"url": "",
+			"url": "127.0.0.1:9998",
 			"tls": {
 				"cert_path": "",
 				"key_file": ""
 			},
-			"auth_key": ""
+			"auth_key": "blahblahblah"
 		},
 		"nexus": {
 			"host": "",
