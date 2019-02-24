@@ -39,7 +39,16 @@
 				"cert_path": "",
 				"key_file": ""
 			},
-			"auth_key": "blahblahblah"
+			"auth_key": "blahblahblah",
+			"options": {
+				"engine": {
+					"store_path": "./tmp",
+					"queue": {
+						"rate": 3,
+						"batch": 1
+					}
+				}
+			}
 		},
 		"nexus": {
 			"host": "",
