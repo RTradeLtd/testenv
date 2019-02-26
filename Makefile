@@ -46,3 +46,21 @@ clean: stop-testenv
 	@sudo ip addr del $(ADDR_NODE1) dev $(INTERFACE)
 	@sudo ip addr del $(ADDR_NODE2) dev $(INTERFACE)
 	@echo "===================          done           ==================="
+
+
+# Set up minio container
+.PHONY: minio
+WAIT=3
+testenv:
+	@echo "===================   preparing test env    ==================="
+	@echo "Setting up network..."
+	@sudo ip link set $(INTERFACE) up
+	@sudo ip addr add $(ADDR_NODE1) dev $(INTERFACE)
+	@sudo ip addr add $(ADDR_NODE2) dev $(INTERFACE)
+	@echo "Spinning up test env components..."
+	@echo "Run 'make clean' to update the images used in the test environment"
+	@$(DOCKERCOMPOSE_TEST) up -d minio
+	@sleep $(WAIT)
+	@echo "Containers online:"
+	@docker ps
+	@echo "===================          done           ==================="
