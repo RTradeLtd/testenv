@@ -51,7 +51,7 @@ clean: stop-testenv
 # Set up minio container
 .PHONY: minio
 WAIT=3
-testenv:
+minio:
 	@echo "===================   preparing test env    ==================="
 	@echo "Setting up network..."
 	@sudo ip link set $(INTERFACE) up
