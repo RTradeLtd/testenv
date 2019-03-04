@@ -2,7 +2,7 @@
   "API": {
     "HTTPHeaders": {
       "Server": [
-        "go-ipfs/0.4.17"
+        "go-ipfs/0.4.19"
       ]
     }
   },
