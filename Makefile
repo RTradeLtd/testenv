@@ -67,9 +67,9 @@ minio:
 
 
 # Set up go-ipfs containers
-.PHONY: minio
+.PHONY: ipfs
 WAIT=3
-minio:
+ipfs:
 	@echo "===================   preparing test env    ==================="
 	@echo "Setting up network..."
 	@sudo ip link set $(INTERFACE) up
