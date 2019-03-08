@@ -64,3 +64,22 @@ minio:
 	@echo "Containers online:"
 	@docker ps
 	@echo "===================          done           ==================="
+
+
+# Set up go-ipfs containers
+.PHONY: minio
+WAIT=3
+minio:
+	@echo "===================   preparing test env    ==================="
+	@echo "Setting up network..."
+	@sudo ip link set $(INTERFACE) up
+	@sudo ip addr add $(ADDR_NODE1) dev $(INTERFACE)
+	@sudo ip addr add $(ADDR_NODE2) dev $(INTERFACE)
+	@echo "Spinning up test env components..."
+	@echo "Run 'make clean' to update the images used in the test environment"
+	@$(DOCKERCOMPOSE_TEST) up -d ipfs.node.1
+	@$(DOCKERCOMPOSE_TEST) up -d ipfs.node.2
+	@sleep $(WAIT)
+	@echo "Containers online:"
+	@docker ps
+	@echo "===================          done           ==================="
