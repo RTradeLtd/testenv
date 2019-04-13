@@ -18,7 +18,7 @@ services:
     container_name: "ipfs_cluster_1"
     depends_on: 
       - ipfs.node.1
-    image: ipfs/ipfs-cluster:v0.8.0
+    image: ipfs/ipfs-cluster:v0.10.1
     ports:
       - ${ADDR_NODE1}:9094:9094
       - ${ADDR_NODE1}:9095:9095
@@ -46,7 +46,7 @@ services:
     depends_on: 
       - ipfs.cluster.1
       - ipfs.node.2
-    image: ipfs/ipfs-cluster:v0.8.0
+    image: ipfs/ipfs-cluster:v0.10.1
     ports:
       - ${ADDR_NODE2}:9094:9094
       - ${ADDR_NODE2}:9095:9095
