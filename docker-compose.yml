@@ -3,8 +3,8 @@ version: '3'
 services:
   ipfs.node.1:
     container_name: "ipfs_node_1"
-    image: ipfs/go-ipfs:v0.4.19
-    command: daemon --migrate=true --enable-pubsub-experiment
+    image: ipfs/go-ipfs:v0.4.20
+    command: daemon --migrate=true --enable-namesys-pubsub
     ports:
       - ${ADDR_NODE1}:4001:4001
       - ${ADDR_NODE1}:5001:5001
@@ -30,8 +30,8 @@ services:
 
   ipfs.node.2:
     container_name: "ipfs_node_2"
-    image: ipfs/go-ipfs:v0.4.19
-    command: daemon --migrate=true --enable-pubsub-experiment
+    image: ipfs/go-ipfs:v0.4.20
+    command: daemon --migrate=true --enable-namesys-pubsub
     ports:
       - ${ADDR_NODE2}:4001:4001
       - ${ADDR_NODE2}:5001:5001
