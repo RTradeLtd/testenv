@@ -33,6 +33,11 @@
 		"password": "password123"
 	},
 	"services": {
+		"rtns": {
+			"multi_addresses": ["/ip4/0.0.0.0/tcp/3999"],
+			"key_name": "",
+			"datastore_path": "test"
+		},
 		"lens": {
 			"url": "127.0.0.1:9998",
 			"tls": {
