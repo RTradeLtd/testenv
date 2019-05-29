@@ -122,13 +122,13 @@
 	},
 	"ipfs_cluster": {
 		"api_connection": {
-			"host": "192.168.2.101",
+			"host": "192.168.1.101",
 			"Port": "9094"
 		}
 	},
 	"ipfs": {
 		"api_connection": {
-			"host": "192.168.2.101",
+			"host": "192.168.1.101",
 			"port": "5001"
 		},
 		"keystore_path": "/tmp"
