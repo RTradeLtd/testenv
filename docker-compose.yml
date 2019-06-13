@@ -3,12 +3,12 @@ version: '3'
 services:
   ipfs.node.1:
     container_name: "ipfs_node_1"
-    image: ipfs/go-ipfs:v0.4.20
+    image: ipfs/go-ipfs:v0.4.21
     command: daemon --migrate=true --enable-namesys-pubsub
     ports:
-      - ${ADDR_NODE1}:4001:4001
-      - ${ADDR_NODE1}:5001:5001
-      - ${ADDR_NODE1}:8080:8080
+      - 4001:4001
+      - 5001:5001
+      - 8080:8080
     volumes:
       - ${PWD}/ipfs/nodes/1/config:/data/ipfs/config
       - ${PWD}/ipfs/nodes/1/version:/data/ipfs/version
@@ -18,44 +18,13 @@ services:
     container_name: "ipfs_cluster_1"
     depends_on: 
       - ipfs.node.1
-    image: ipfs/ipfs-cluster:v0.10.1
+    image: ipfs/ipfs-cluster:v0.11.0-rc3
     ports:
-      - ${ADDR_NODE1}:9094:9094
-      - ${ADDR_NODE1}:9095:9095
-      - ${ADDR_NODE1}:9096:9096
-    environment:
-      - IPFS_API=/ip4/${ADDR_NODE1}/tcp/5001
+      - 9094:9094
+      - 9095:9095
+      - 9096:9096
     volumes:
       - ${PWD}/ipfs/clusters/1/service.json:/data/ipfs-cluster/service.json
-
-  ipfs.node.2:
-    container_name: "ipfs_node_2"
-    image: ipfs/go-ipfs:v0.4.20
-    command: daemon --migrate=true --enable-namesys-pubsub
-    ports:
-      - ${ADDR_NODE2}:4001:4001
-      - ${ADDR_NODE2}:5001:5001
-      - ${ADDR_NODE2}:8080:8080
-    volumes:
-      - ${PWD}/ipfs/nodes/2/config:/data/ipfs/config
-      - ${PWD}/ipfs/nodes/2/version:/data/ipfs/version
-      - ${PWD}/ipfs/nodes/2/datastore_spec:/data/ipfs/datastore_spec
-
-  ipfs.cluster.2:
-    container_name: "ipfs_cluster_2"
-    depends_on: 
-      - ipfs.cluster.1
-      - ipfs.node.2
-    image: ipfs/ipfs-cluster:v0.10.1
-    ports:
-      - ${ADDR_NODE2}:9094:9094
-      - ${ADDR_NODE2}:9095:9095
-      - ${ADDR_NODE2}:9096:9096
-    command: daemon --upgrade --bootstrap /ip4/${ADDR_NODE1}/tcp/9096/ipfs/QmRiwg9GM1wNx3ZeiPdZBjAsy99qvhYpzu5yt1fa75mSx5
-    environment:
-      - IPFS_API=/ip4/${ADDR_NODE2}/tcp/5001
-    volumes:
-      - ${PWD}/ipfs/clusters/2/service.json:/data/ipfs-cluster/service.json
 
   postgres:
     image: postgres
