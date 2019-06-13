@@ -9,7 +9,7 @@
   "Addresses": {
     "API": "/ip4/0.0.0.0/tcp/5001",
     "Announce": [
-      "/ip4/127.0.0.1/tcp/4001"
+      "/ip4/0.0.0.0/tcp/4001"
     ],
     "Gateway": "/ip4/0.0.0.0/tcp/8080",
     "NoAnnounce": [],
