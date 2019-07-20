@@ -3,7 +3,7 @@ version: '3'
 services:
   ipfs.node.1:
     container_name: "ipfs_node_1"
-    image: ipfs/go-ipfs:v0.4.21
+    image: ipfs/go-ipfs:v0.4.22-rc1
     command: daemon --migrate=true --enable-namesys-pubsub
     ports:
       - 4001:4001
