@@ -1,9 +1,9 @@
-version: '3'
+version: '4'
 
 services:
   ipfs.node.1:
     container_name: "ipfs_node_1"
-    image: ipfs/go-ipfs:v0.4.21
+    image: ipfs/go-ipfs:v0.4.34
     command: daemon --migrate=true --enable-namesys-pubsub
     ports:
       - 4001:4001
@@ -18,7 +18,7 @@ services:
     container_name: "ipfs_cluster_1"
     depends_on: 
       - ipfs.node.1
-    image: ipfs/ipfs-cluster:v0.11.0-rc3
+    image: ipfs/ipfs-cluster:v0.12.1
     ports:
       - 9094:9094
       - 9095:9095
