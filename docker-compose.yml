@@ -27,7 +27,7 @@ services:
       - ${PWD}/ipfs/clusters/1/service.json:/data/ipfs-cluster/service.json
 
   postgres:
-    image: postgres
+    image: postgres:10.12
     ports:
       - "5433:5432"
     environment:
