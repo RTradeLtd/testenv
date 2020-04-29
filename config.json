@@ -27,10 +27,10 @@
 	},
 	"database": {
 		"name": "temporal",
-		"url": "127.0.0.1",
-		"port": "5433",
-		"username": "postgres",
-		"password": "password123"
+		"url": "localhost",
+		"port": "5432",
+		"username": "temporaladmin",
+		"password": "temporaladmin"
 	},
 	"services": {
 		"rtns": {
